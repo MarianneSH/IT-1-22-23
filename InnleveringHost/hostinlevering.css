@@ -1,0 +1,291 @@
+/* Setter skrifttype, at skriften skal være horisotalt midstilt på skjermen og vertikalt 200px fra toppen av skjermen */
+#startdiv {
+    font-family: Calibri, sans-serif;
+    text-align: center;
+    margin-top: 200px; ;
+
+}
+
+/* Setter bakgrunnsfarge på linken, fjerner understreken og setter fargen til svart og gjør at animasjonen til linken "popper" glidene i steden for rett ut */
+a.one {
+    background-color: #cccccc;
+    text-decoration: none;
+    color: #000000;
+    font-size: xx-large;
+    transform: rotate(0deg);
+    transition-duration: 0.8s;
+}
+
+body.one {
+    background-color: aliceblue;
+}
+
+/* Setter bilde fra nettet som bakrunnsbilde, sier at den ikke skal repetere seg, fylle hele siden og ha en høyde på 700px, uten en margin */
+body.two {
+    background-image: url('https://storage.googleapis.com/pod_public/1300/118131.jpg');
+    background-repeat: no-repeat;
+    height: 700px;
+    margin: 0px;
+    background-size: cover;
+}
+
+/* Gjør teksten på forsiden 260% av normal størrelse og setter fargen på teksten til blå når man holder over teksten   */
+a.one:hover {
+    font-size: 260%;
+    color: #336699;
+
+}
+
+/* Gjør teksten rød når man trykker på den */
+a.one:active {
+  color: red;
+}
+
+
+#h1stil {
+    font-size: large;
+    text-align: center;
+    color: #ffffff;
+    padding-top: 350px;
+
+}
+
+/* Gjør skriften større gir hvert avsnitt en ramme og setter forskjellig margin på hver av sidene av tekstboksen og skjermen */
+p.two {
+    font-size: large;
+    border: solid black;
+    text-align: left;
+    margin: 10px 550px 20px 50px;
+}
+
+a.two {
+    text-decoration: none;
+    color: #9e2a2b;
+}
+
+#bildelov {
+    width: 350px;
+    border: 5px solid #acd1af;
+    margin: 5px 50px;
+    position: relative;
+    left: 900px;
+    bottom: 270px;
+    border-radius: 5px;
+
+}
+
+#bgc1 {
+    background-color: #fba253;
+}
+
+a.three {
+    text-decoration: none;
+    font-size: 30px;
+    display: block;
+    width: 30px;
+    margin: auto;
+    background-color: #acd1af;
+    color: #000000;
+    border: 2px solid black;
+}
+
+a.four {
+    text-decoration: none;
+    font-size: 30px;
+    display: block;
+    width: 45px;
+    margin: auto;
+    background-color: red;
+    color: #000000;
+    border: 2px solid black;
+    margin-top: 30px;
+
+}
+
+body#four {
+    background-image: url('https://cdn.britannica.com/18/196818-050-7030C41D/Maple-Colors.jpg?q=60');
+    background-repeat: no-repeat;
+    height: 1000px;
+    margin: 0px;
+    background-size: cover;
+
+}
+
+/* Gir teksten en ramme, gjør bakgrunnen i rammen mindre gjennomsiktig */
+.boksdiv {
+    border: #000000 solid 5px;
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    padding: 30px;
+    color: #990000;
+    font-size: 30px;
+    margin: 100px 30px;
+    text-align: center;
+    padding: 100px;
+  
+  
+}
+
+.kakaoboks {
+  border: #000000 solid 5px;
+
+}
+
+a#five {
+    text-decoration: none;
+    font-size: 30px;
+    display: block;
+    width: 52px;
+    margin: auto;
+    background-color: red;
+    color: #000000;
+    border: 2px solid black;
+    margin-top: 20px;
+}
+
+.navigation {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  /* Mellomrom mellom linkene i menyen, tar vekk understrek, gir en skriftstørrelse, gir teksten en farge som skal vises når menyen er åpen uten at noe annet skjer, sier at menyen skal bruke 0.3 sek på å skyves ut */
+  .navigation a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+/* Fargen på teksten i menyen endres når man holder over den */
+  .navigation a:hover {
+    color: #111111;
+  }
+  
+  /* Posisjonen til krysse (lukke knappen) */
+  .navigation .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  #hosterbest {
+    color: #000000;
+  }
+
+  #bgc2 {
+    background-color: #EBBC4E;
+
+  }
+
+  /* Ungår mellomrom mellom radene i tabellen og legger på en kant nederst i tabellen */
+  table {
+    border-collapse: collapse;
+    border-bottom: 2px solid #3f4259;
+    margin: auto;
+  }
+
+  /* Lager en kant rundt resten av tabellen */
+  th, td {
+    border: 3px solid #C26E60;
+    padding: 8px;
+
+  }
+
+  /* Gir en bakrundsfarge til den øverste raden i tabellen  */
+  thead > tr {
+    background-color: #fff3b0;
+    color: #C26E60;
+    font-size: 20px;
+  }
+
+  /* Gir en bakgrunnsfarge til resten av tabellen */
+  tbody > tr {
+    background-color: #FFC27B;
+   
+  } 
+
+  a#six {    
+    text-decoration: none;
+    font-size: 30px;
+    display: block;
+    width: 95px;
+    margin: auto;
+    background-color: #acd1af;
+    color: #000000;
+    border: 2px solid black;
+
+  }
+
+  a#seven {
+    text-decoration: none;
+    font-size: 30px;
+    display: block;
+    width: 240px;
+    margin: auto;
+    background-color: red;
+    color: #000000;
+    border: 2px solid black;
+    margin-top: 20px;
+  }
+
+
+body#three {
+    background-image: url(hosthjertehimmel.jpg);
+    background-repeat: no-repeat;
+    margin: 0px;
+    background-size: cover;
+   
+} 
+
+/* Gir en farge til <li> -elementer som ligger rett innenfor et <ul> -element  */
+ul>li{
+
+  color: #9e2a2b !important ;
+
+}
+
+/* Gir en annen farge til resten av liste elementene  */
+ul li {
+  color: #acd1af;
+  font-size: 30px;
+
+}
+
+ a.eight{
+  text-decoration: none;
+  color: #FFC27B;
+}
+
+img#one {
+ 
+  width: 550px;
+  border: 5px solid #acd1af;
+  margin: 5px 50px;
+  position: relative;
+  left: 750px;
+  bottom: 650px;
+  border-radius: 5px;
+
+}
+
+#h1stil2 {
+  text-align: center;
+  font-size: 25px;
+  color: #000000;
+}
+
+#bcg2div {
+  background-color: #599BAD ;
+  border: 5px #000000 ;
+}
