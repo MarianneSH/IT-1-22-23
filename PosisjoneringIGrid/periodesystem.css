@@ -1,16 +1,19 @@
 div {
     padding: 10px;
     float: right;
-    width: 80px;
-    height: 80px;
+    width: 65px;
+    height: 65px;
     border: solid 1px #000000;
     background-color: #99ccff;
     transition-duration: 1s;
+    font-size: small;
 }
+
+
 
 section {
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 2px;
     grid-template-columns: repeat(18, 1fr);
     justify-content: space-between;
     text-align: center;
@@ -56,11 +59,15 @@ section {
 }
 
 .grupper {
-    width: 80px;
+    width: 60px;
     height: 20px;
     margin-bottom: 20px;
 }
 
 div:hover {
     transform: scale(150%);
+}
+
+.grupper:hover {
+    transform: none;
 }
