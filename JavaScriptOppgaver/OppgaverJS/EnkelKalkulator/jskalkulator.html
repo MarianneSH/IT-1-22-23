@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let tall1= Number (prompt("Oppgi et heltall")); //Number eller parseInt gjør om til tall
+        let tall2= Number(prompt("Oppgi et  heltall"));
+        let operatator = prompt ("Operasjon (+ - * /");
+      
+
+        if(operatator=="+") {
+            resultat = tall1+tall2;
+        }
+
+       else if(operatator=="-") {
+            resultat = tall1-tall2
+        }
+
+       else if(operatator=="*") {
+            resultat = tall1*tall2
+        }
+
+       else if(operatator=="/") {
+            resultat = tall1/tall2
+        }
+
+        else {
+            alert ("Det var ikke det jeg sa du skulle gjøre")
+            document.write ("Refresh for å prøve på nytt")
+        }
+
+        
+         if(resultat < 1) {
+            document.body.style.backgroundColor = "red";
+        }
+
+        else if (resultat > 1 && resultat <30) {
+            document.body.style.backgroundColor = "yellow";
+        }
+
+        else if (resultat >= 30 && resultat <90) {
+            document.body.style.backgroundColor = "#4DB3E5";
+        }
+
+        else{
+            document.body.style.backgroundColor = "#5AD872";
+        } 
+    
+
+  
+        document.write ("Det blir "+resultat+ ".");
+
+      
+    </script>
+</body>
+</html>
