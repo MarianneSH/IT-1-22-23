@@ -6,9 +6,6 @@
     justify-content: space-between;
     text-align: center;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-   
-    
-
 }
 
 #border {
@@ -25,8 +22,7 @@
 a{
     text-decoration: none;
     padding: 10px;
-    color: #b6977d;
-    
+    color: #765341;
     font-size: x-large;
     margin: 10px;
     flex-grow: 1;
@@ -43,9 +39,6 @@ a{
 
 .meny {display: grid;
     flex-wrap: wrap;
-   
-   
-    grid-template-columns: repeat(3, 1fr);
 
 }
 
@@ -53,6 +46,5 @@ a{
     text-decoration-line: underline;
     text-decoration-style: wavy;
     text-decoration-color: white;
-   
     text-underline-offset: 13px; 
   }
