@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlderGenerator</title>
+</head>
+<body onload="startTime()">
+    <script>
+        var tilfeldigTall
+        tilfeldigTall = (parseInt(Math.random()*100)+1);
+        document.write (tilfeldigTall)
+
+        if (tilfeldigTall<10)
+        {document.write ("<br>"+"Du er ung")}
+
+        else if ((tilfeldigTall<10)) 
+        {document.write ("<br>"+"Du er ungdom")}
+
+        else if ((tilfeldigTall<20)) 
+        {document.write ("<br>"+"Du er voksen")}
+
+        else if ((tilfeldigTall<67)) 
+        {document.write ("<br>"+"Du er eldre")}
+
+        else 
+        {document.write ("<br>"+"Du er gammel")}
+
+        if ((tilfeldigTall==67)) 
+        {document.write ("<br>"+"Du er jammen blitt pensjonsist")}
+       
+
+        // && betyr "samtidig som"
+        // || betyr "eller"
+        // betyr "ikke"
+    </script>
+
+</body>
+</html>
