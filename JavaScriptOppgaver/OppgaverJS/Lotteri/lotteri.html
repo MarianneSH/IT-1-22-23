@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotteri</title>
+</head>
+<body>
+
+    <h1>Lodd trekning</h1>
+    <input id="inpAntallLodd" placeholder="Antall solgte lodd" type="Number">
+    <input id="inpMittValg" placeholder="Skriv loddet du vil ha" type="Number">
+    <p id="btnVelgVinner">Klikk på meg for resultat</p>
+    <h1 id="txtResultat"></h1>
+    
+   
+    <!-- <button>Klikk på meg for resultat</button> kan også brukes for knapp-->
+    <script>
+        inpAntallLodd= document.getElementById("inpAntallLodd"); //Knytter Html elementet og JC elemenntet sammen
+        btnVelgVinner= document.getElementById("btnVelgVinner");
+        inpMittValg = document.getElementById ("inpMittValg")
+        txtResultat = document.getElementById("txtResultat")
+        var antallLodd
+        var mittValg
+        var vinnerLodd
+       
+        btnVelgVinner.onclick= function () {
+                antallLodd= Number(inpAntallLodd.value); //det som skrives inn i feltet blir verdien
+                mittValg = Number(inpMittValg.value); //verdien til HTML elementet lagres i mitt Valg
+                vinnerLodd=parseInt((Math.random()*antallLodd)+1)
+
+                if (mittValg==vinnerLodd) {
+                    txtResultat.innerHTML = "Du vant";
+                  }
+
+                else {
+                    txtResultat.innerHTML = "Du vant ikke. Vinnerloddet er: "+ vinnerLodd;
+                }
+
+               // alert ("Yippi, tallet er:"+ antallLodd); denne kan brukes for å se om det fungerer
+            }
+
+    </script>
+
+</body>
+</html>
