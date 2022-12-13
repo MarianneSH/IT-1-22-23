@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yatzy</title>
+    <link rel="stylesheet" href="Yatzy.css">
+    <script src="https://kit.fontawesome.com/0956921698.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <h1>Jule-Yatzy</h1>
+    <div id="tabell">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th class="Spiller1"> <img src="nisse.png" alt="Santa"> </th>
+                    <th class="Spiller2"> <img src="slede.gif" alt="Sled with santa"></th>
+                    <th class="Spiller3"> <img src="grot.png" alt="Christmas porridge"></th>
+                    <th class="Spiller4"> <img src="snowflake.png" alt="Snowflake"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Enere</td>
+                    <td class="enere Spiller1" onclick="beregn (1,'enere')"></td>
+                    <td class="enere Spiller2" onclick="beregn (2,'enere')"></td>
+                    <td class="enere Spiller3" onclick="beregn (3,'enere')"></td>
+                    <td class="enere Spiller4" onclick="beregn (4,'enere')"></td>
+                </tr>
+                <tr>
+                    <td>Toere</td>
+                    <td class="toere Spiller1" onclick="beregn (1,'toere')"></td>
+                    <td class="toere Spiller2" onclick="beregn (2,'toere')"></td>
+                    <td class="toere Spiller3" onclick="beregn (3,'toere')"></td>
+                    <td class="toere Spiller4" onclick="beregn (4,'toere')"></td>
+                </tr>
+                <tr>
+                    <td>Treere</td>
+                    <td class="treere Spiller1" onclick="beregn (1,'treere')"></td>
+                    <td class="treere Spiller2" onclick="beregn (2,'treere')"></td>
+                    <td class="treere Spiller3" onclick="beregn (3,'treere')"></td>
+                    <td class="treere Spiller4" onclick="beregn (4,'treere')"></td>
+                </tr>
+                <tr>
+                    <td>Firere</td>
+                    <td class="firere Spiller1" onclick="beregn (1,'firere')"></td>
+                    <td class="firere Spiller2" onclick="beregn (2,'firere')"></td>
+                    <td class="firere Spiller3" onclick="beregn (3,'firere')"></td>
+                    <td class="firere Spiller4" onclick="beregn (4,'firere')"></td>
+                </tr>
+                <tr>
+                    <td>Femmere</td>
+                    <td class="femmere Spiller1" onclick="beregn (1,'femmere')"></td>
+                    <td class="femmere Spiller2" onclick="beregn (2,'femmere')"></td>
+                    <td class="femmere Spiller3" onclick="beregn (3,'femmere')"></td>
+                    <td class="femmere Spiller4" onclick="beregn (4,'femmere')"></td>
+                </tr>
+                <tr>
+                    <td>Seksere</td>
+                    <td class="seksere Spiller1" onclick="beregn (1,'seksere')"></td>
+                    <td class="seksere Spiller2" onclick="beregn (2,'seksere')"></td>
+                    <td class="seksere Spiller3" onclick="beregn (3,'seksere')"></td>
+                    <td class="seksere Spiller4" onclick="beregn (4,'seksere')"></td>
+                </tr>
+                <tr>
+                    <td class="summene">Sum</td>
+                    <td class="sum Spiller1 summene" onclick="beregn (1,'sum')">0</td>
+                    <td class="sum Spiller2 summene" onclick="beregn (2,'sum')">0</td>
+                    <td class="sum Spiller3 summene" onclick="beregn (3,'sum')">0</td>
+                    <td class="sum Spiller4 summene" onclick="beregn (4,'sum')">0</td>
+                </tr>
+                <tr>
+                    <td class="summene">Bonus</td>
+                    <td class="bonus Spiller1 summene" onclick="beregn (1,'bonus')">0</td>
+                    <td class="bonus Spiller2 summene" onclick="beregn (2,'bonus')">0</td>
+                    <td class="bonus Spiller3 summene" onclick="beregn (3,'bonus')">0</td>
+                    <td class="bonus Spiller4 summene" onclick="beregn (4,'bonus')">0</td>
+                </tr>
+                <tr>
+                    <td>1 par</td>
+                    <td class="ettPar Spiller1" onclick="beregn (1,'ettPar')"></td>
+                    <td class="ettPar Spiller2" onclick="beregn (2,'ettPar')"></td>
+                    <td class="ettPar Spiller3" onclick="beregn (3,'ettPar')"></td>
+                    <td class="ettPar Spiller4" onclick="beregn (4,'ettPar')"></td>
+                </tr>
+                <tr>
+                    <td>2 par</td>
+                    <td class="toPar Spiller1" onclick="beregn (1,'toPar')"></td>
+                    <td class="toPar Spiller2" onclick="beregn (2,'toPar')"></td>
+                    <td class="toPar Spiller3" onclick="beregn (3,'toPar')"></td>
+                    <td class="toPar Spiller4" onclick="beregn (4,'toPar')"></td>
+                </tr>
+                <tr>
+                    <td>3 like</td>
+                    <td class="treLike Spiller1" onclick="beregn (1,'treLike')"></td>
+                    <td class="treLike Spiller2" onclick="beregn (2,'treLike')"></td>
+                    <td class="treLike Spiller3" onclick="beregn (3,'treLike')"></td>
+                    <td class="treLike Spiller4" onclick="beregn (4,'treLike')"></td>
+                </tr>
+                <tr>
+                    <td>4 like</td>
+                    <td class="fireLike Spiller1" onclick="beregn (1,'fireLike')"></td>
+                    <td class="fireLike Spiller2" onclick="beregn (2,'fireLike')"></td>
+                    <td class="fireLike Spiller3" onclick="beregn (3,'fireLike')"></td>
+                    <td class="fireLike Spiller4" onclick="beregn (4,'fireLike')"></td>
+                </tr>
+                <tr>
+                    <td>Liten straight</td>
+                    <td class="litenStraight Spiller1" onclick="beregn (1,'litenStraight')"></td>
+                    <td class="litenStraight Spiller2" onclick="beregn (2,'litenStraight')"></td>
+                    <td class="litenStraight Spiller3" onclick="beregn (3,'litenStraight')"></td>
+                    <td class="litenStraight Spiller4" onclick="beregn (4,'litenStraight')"></td>
+                </tr>
+                <tr>
+                    <td>Stor straight</td>
+                    <td class="storStraight Spiller1" onclick="beregn (1,'storStraight')"></td>
+                    <td class="storStraight Spiller2" onclick="beregn (2,'storStraight')"></td>
+                    <td class="storStraight Spiller3" onclick="beregn (3,'storStraight')"></td>
+                    <td class="storStraight Spiller4" onclick="beregn (4,'storStraight')"></td>
+                </tr>
+                <tr>
+                    <td>Hus</td>
+                    <td class="hus Spiller1" onclick="beregn (1,'hus')"></td>
+                    <td class="hus Spiller2" onclick="beregn (2,'hus')"></td>
+                    <td class="hus Spiller3" onclick="beregn (3,'hus')"></td>
+                    <td class="hus Spiller4" onclick="beregn (4,'hus')"></td>
+                </tr>
+                <tr>
+                    <td>Sjanse</td>
+                    <td class="sjanse Spiller1" onclick="beregn (1,'sjanse')"></td>
+                    <td class="sjanse Spiller2" onclick="beregn (2,'sjanse')"></td>
+                    <td class="sjanse Spiller3" onclick="beregn (3,'sjanse')"></td>
+                    <td class="sjanse Spiller4" onclick="beregn (4,'sjanse')"></td>
+                </tr>
+                <tr>
+                    <td>Yatzy</td>
+                    <td class="yatzy Spiller1" onclick="beregn (1,'yatzy')"></td>
+                    <td class="yatzy Spiller2" onclick="beregn (2,'yatzy')"></td>
+                    <td class="yatzy Spiller3" onclick="beregn (3,'yatzy')"></td>
+                    <td class="yatzy Spiller4" onclick="beregn (4,'yatzy')"></td>
+                </tr>
+                <tr>
+                    <td class="summene">Totalsum</td>
+                    <td class="totalsum Spiller1 summene" onclick="beregn (1,'totalsum')">0</td>
+                    <td class="totalsum Spiller2 summene" onclick="beregn (2,'totalsum')">0</td>
+                    <td class="totalsum Spiller3 summene" onclick="beregn (3,'totalsum')">0</td>
+                    <td class="totalsum Spiller4 summene" onclick="beregn (4,'totalsum')">0</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <br>
+
+        <table id="tabellTerningEn">
+            <thead>
+                <tr>
+                    <th> Terning 1 <input id=holdTerning1 type="checkbox"> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="rull1"> </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table id="tabellTerningTo">
+            <thead>
+                <tr>
+                    <th>Terning 2 <input id=holdTerning2 type="checkbox"> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="rull2"> </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table id="tabellTerningTre">
+            <thead>
+                <tr>
+                    <th>Terning 3 <input id=holdTerning3 type="checkbox"> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="rull3"> </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table id="tabellTerningFire">
+            <thead>
+                <tr>
+                    <th>Terning 4 <input id=holdTerning4 type="checkbox"> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="rull4"> </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table id="tabellTerningFem">
+            <thead>
+                <tr>
+                    <th>Terning 5 <input id=holdTerning5 type="checkbox"> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="rull5"> </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button id="btnNestePerson" style="background-color: red; position: absolute; left: 610px; top: 215px;">Neste
+            person</button>
+
+        <div class="container">
+            <button id="btnRull" class="nesebutton">Kast terninger</button>
+            <img id="rudolf" src="Rudolph.png" alt="Reinsdyret Rudolf">
+        </div>
+
+    </div>
+
+    <div id="regler" id="border">
+        <h2>Hvordan spille Yatzy?</h2>
+        <p>
+        <dl>
+            <dt>Enere</dt>
+            <dd>- Gir samme antall poeng som antall øyne på enere.</dd>
+            <br>
+            <dt>Toere</dt>
+            <dd>- Gir samme antall poeng som antall øyne på toere.</dd>
+            <br>
+            <dt>Treere</dt>
+            <dd>- Gir samme antall poeng som antall øyne på treere.</dd>
+            <br>
+            <dt>Firere</dt>
+            <dd>- Gir samme antall poeng som antall øyne på firere.</dd>
+            <br>
+            <dt>Femmere</dt>
+            <dd>- Gir samme antall poeng som antall øyne på femmere.</dd>
+            <br>
+            <dt>Seksere</dt>
+            <dd>- Gir samme antall poeng som antall øyne på seksere.</dd>
+            <br>
+            <dt>Bonus</dt>
+            <dd>- Hvis summen av de seks første kategoriene er 63 eller mer blir det gitt en bonus på 50 poeng</dd>
+            <br>
+            <dt>Et par</dt>
+            <dd>- To like. Gir samme antall poeng som antall øyne på parret</dd>
+            <br>
+            <dt>To par</dt>
+            <dd>- Kombinasjon av to like terninger og to like terninger av en annen verdi,
+                gir samme antall poeng som øyne på de fire terningene som inngår i parene</dd>
+            <br>
+            <dt>To par</dt>
+            <dd>- Kombinasjon av to like terninger og to like terninger av en annen verdi,
+                gir samme antall poeng som øyne på de fire terningene som inngår i parene</dd>
+            <br>
+            <dt>Tre like</dt>
+            <dd>- Tre like terninger, gir samme antall poeng som øyne på de tre like terningene.</dd>
+            <br>
+            <dt>Fire like</dt>
+            <dd>- Fire like terninger, gir samme antall poeng som øyne på de fire like terningene.</dd>
+            <br>
+            <dt>Liten straight</dt>
+            <dd>- Kombinasjonen 1-2-3-4-5, gir 15 poeng.</dd>
+            <br>
+            <dt>Stor straight</dt>
+            <dd>- Kombinasjonen 2-3-4-5-6, gir 20 poeng.</dd>
+            <br>
+            <dt>Hus</dt>
+            <dd>- Kombinasjon av tre like terninger og to like terninger av en annen verdi. Gir samme antall poeng som
+                øyne.</dd>
+            <br>
+            <dt>Sjanse</dt>
+            <dd>- Vilkårlig kombinasjon, gir samme antall poeng som øyne.</dd>
+            <br>
+            <dt>Yatzy</dt>
+            <dd>- Fem like terninger, gir 50 poeng. For dette kastet får du alltid 50 poeng, uansett hvilke fem, slik at
+                både 2-2-2-2-2 og 6-6-6-6-6 gir begge 50 poeng.</dd>
+
+
+        </dl>
+        </p>
+    </div>
+
+    <img style="width: 250px; position: absolute; right: -40px; top: 10px; transform: rotate(35deg);"
+        src="christmasMistletoe.png" alt="Mistletoe">
+
+
+    <script>
+        let btnRull = document.getElementById("btnRull") // Kobler html og Javascript id sammen
+        let rull = [] //lager en array for rull
+        let bildeTerning = [
+            "",
+            " <img src='Terning1.png' alt=''>",
+            " <img src='Terning2.png' alt= ''>",
+            " <img src='Terning3.png' alt=''>",
+            " <img src='Terning4.png' alt=''>",
+            " <img src='Terning5.png' alt=''>",
+            " <img src='Terning6.png' alt=''>",
+        ]; //lager en array som inneholder bilder for terningene
+
+        let holdTerning1 = document.getElementById("holdTerning1");
+        let holdTerning2 = document.getElementById("holdTerning2");
+        let holdTerning3 = document.getElementById("holdTerning3");
+        let holdTerning4 = document.getElementById("holdTerning4");
+        let holdTerning5 = document.getElementById("holdTerning5");
+        let kast = 0; //gjør at kast blir definert og får verdien 0
+        let sum = 0; //Definerer summen som null ved starten av runden
+        let spillere = [
+            "Spiller1",
+            "Spiller2",
+            "Spiller3",
+            "Spiller4",
+        ]
+        let tur = 0
+
+        let terninger = [0, 1, 2, 3, 4]
+        btnRull.onclick = function () {  //gjør at knappen btnRull blir en function. 
+            for (i = 1; i < 6; i++) { //Den definerer i som 1 og fåregår til i blir 5 altså 5 terninger
+                let behold = document.getElementById("holdTerning" + i).checked;
+
+                if (behold == false) { //hvis chekboxen ikke er huket av skal den:
+                    let terning = parseInt((Math.random() * 6) + 1); //Genererer tilfeldig tall mellom 1 og 6
+                    document.getElementById("rull" + i).innerHTML = bildeTerning[terning];  //gjør at tallet blir til en terning som bilde i stedenfor tall
+                    terninger[i - 1] = terning
+                }
+            }
+            kast++ //plusser 1 på for hver gang for løkken blir kjørt
+            if (kast == 3) {
+                document.getElementById("btnRull").disabled = true; //sier at knappen skal slutte å fungere hvis verdien til knappen blir lik 3
+            }
+
+        }
+
+        btnNestePerson.onclick = function () {
+            for (i = 1; i < 6; i++) {
+                document.getElementById("btnRull").disabled = false; //Setter rull knappen på igjen
+                kast = 0; //gir kast verdien null (går opp med +1 for hvert kast)
+                sum = 0; //setter summen tilbake til null
+                // let behold = document.getElementById ("holdTerning"+i).checked= false; //setter chekboxen som holder terningene tilbake til uncheked så terningene kan bli kastet igjen
+                // document.getElementById("rull"+i).innerHTML=" "; //"Resetter" terningene ved å sette der hvor terning bildene egentlig er til ingenting
+            }
+        }
+
+
+        function beregn(Spiller, kategori) { //lager en function som blir koblet til ruter i tabbellen i kategoriene enere til seksere
+            if (kategori == "enere", "toere", "treere", "firere", "femmere", "seksere") {
+                //hvis kategorien er enere skal den se om terningen er 1, hvis den er dettte skal den plusse en på summen som er null fra før, dette blir gjentatt fem ganger (1 per terning)
+                if (kategori == "enere")
+                    for (i = 0; i < 5; i++) {
+                        if (terninger[i] == 1) {
+                            sum += 1
+                        }
+                    }
+                //hvis kategorien er toere skal den se om terningen er 2, hvis den er dettte skal den plusse to på summen som er null fra før, dette blir gjentatt fem ganger (1 per terning)
+                if (kategori == "toere")
+                    for (i = 0; i < 5; i++) {
+                        if (terninger[i] == 2) {
+                            sum += 2
+                        }
+                    }
+
+                //hvis kategorien er treere skal den se om terningen er 3, hvis den er dettte skal den plusse tre på summen som er null fra før, dette blir gjentatt fem ganger (1 per terning)
+                if (kategori == "treere")
+                    for (i = 0; i < 5; i++) {
+                        if (terninger[i] == 3) {
+                            sum += 3
+                        }
+                    }
+
+                //hvis kategorien er firere skal den se om terningen er 4, hvis den er dettte skal den plusse fire på summen som er null fra før, dette blir gjentatt fem ganger (1 per terning)
+                if (kategori == "firere")
+                    for (i = 0; i < 5; i++) {
+                        if (terninger[i] == 4) {
+                            sum += 4
+                        }
+                    }
+                //hvis kategorien er femmere skal den se om terningen er 5, hvis den er dettte skal den plusse fem på summen som er null fra før, dette blir gjentatt fem ganger (1 per terning)
+                if (kategori == "femmere")
+                    for (i = 0; i < 5; i++) {
+                        if (terninger[i] == 5) {
+                            sum += 5
+                        }
+                    }
+
+                //hvis kategorien er seksere skal den se om terningen er seks, hvis den er dettte skal den plusse seks på summen som er null fra før, dette blir gjentatt fem ganger (1 per terning)
+                if (kategori == "seksere")
+                    for (i = 0; i < 5; i++) {
+                        if (terninger[i] == 6) {
+                            sum += 6
+                        }
+                    }
+            }
+
+            if (kategori == "sum") {
+                var enere = Number(document.getElementsByClassName("enere Spiller" + Spiller)[0].innerHTML) //henter enere i spilleren som har valgt summen
+                var toere = Number(document.getElementsByClassName("toere Spiller" + Spiller)[0].innerHTML) //henter toere i spilleren som har valgt summen
+                var treere = Number(document.getElementsByClassName("treere Spiller" + Spiller)[0].innerHTML) //henter treere i spilleren som har valgt summen
+                var firere = Number(document.getElementsByClassName("firere Spiller" + Spiller)[0].innerHTML) //henter firere i spilleren som har valgt summen
+                var femmere = Number(document.getElementsByClassName("femmere Spiller" + Spiller)[0].innerHTML) //henter femmere i spilleren som har valgt summen
+                var seksere = Number(document.getElementsByClassName("seksere Spiller" + Spiller)[0].innerHTML) //henter seksere i spilleren som har valgt summen
+                sum = enere + toere + treere + firere + femmere + seksere
+            } //plusser sammen alle tallene som er hentet og definerer dette som sum
+
+            if (kategori == "bonus") { //Henter tallet som står i sum kategorien. Hvis forsteSum (summen) er større enn eller lik 63 blir det gitt en bonus (sum) på 50. Hvis ikke blir bonusen (sum) 0
+                var forsteSum = Number(document.getElementsByClassName("sum Spiller" + Spiller)[0].innerHTML)
+                if (forsteSum >= 63) { sum = 50 }
+                else (sum = 0)
+            }
+
+            //Hvis kategorien er ettPar skal den sjekke om noen av terningene er like, og gange terningen som er lik en annen med 2
+            let ettParEn = 0 //setter verdien av det første parret til null
+            let ettParTo = 0 //setter verdien av det andre parret til null
+            let ettParTre = 0 //setter verdien av det tredje parret til null
+            let ettParFire = 0 //setter verdien av det fjerde parret til null
+
+
+
+            if (kategori == "ettPar") { //sjekker om noen av terningene er like hverandre. Først om terning 0 (1) er lik terning 1 eller 2 eller 3 eller 4, så om terning 2(1) er lik terning 3 eller 4 eller 5 osv. dette blir gjort med alle terningkombinasjonene. Terningen som er lik en annen bli ganget med 2.
+                if (terninger[0] == terninger[1] || terninger[0] == terninger[2] || terninger[0] == terninger[3] || terninger[0] == terninger[4]) { ettParEn = terninger[0] * 2 }
+                if (terninger[1] == terninger[2] || terninger[1] == terninger[3] || terninger[1] == terninger[4]) { ettParTo = terninger[1] * 2 }
+                if (terninger[2] == terninger[3] || terninger[2] == terninger[4]) { ettParTre = terninger[2] * 2 }
+                if (terninger[3] == terninger[4]) { ettParFire = terninger[3] * 2 };
+
+                if (ettParEn >= ettParTo || ettParEn >= ettParTre || ettParEn >= ettParFire) { sum = ettParEn } //Her sjekker den hvilket par som er størst hvis den finner to par. Det parret den til slutt finner ut av er størst blir satt som sum og skrevet ut
+                if (ettParTo > ettParEn || ettParTo > ettParTre || ettParTo > ettParFire) { sum = ettParTo }
+                if (ettParTre > ettParEn || ettParTre > ettParTo || ettParTre > ettParFire) { sum = ettParTre }
+                if (ettParFire > ettParEn || ettParFire > ettParTo || ettParFire > ettParTre) { sum = ettParFire }
+            }
+
+            let toParEn //definerer det første parret som er mulig med terning 0 og en av de andre terningene
+            let toParTo //definerer det andre parret som er mulig med terning 1 og en av de andre terningene
+            let toParTre //definerer det tredje parret som er mulig med terning 2 og en av de andre terningene
+            let toParFire //definerer det fjerde parret som er mulig med terning 3 og en av de andre terningene
+
+            let sjekkToParEn = 0 //definerer det som skal sjekke om det er et par til null, dette er gjort for de samme mulighetene som over
+            let sjekkToParTo = 0 //definerer det som skal sjekke om det er et par til null
+            let sjekkToParTre = 0 //definerer det som skal sjekke om det er et par til null
+            let sjekkToParFire = 0 //definerer det som skal sjekke om det er et par til null
+
+            if (kategori == "toPar") {
+                if (terninger[0] == terninger[1] || terninger[0] == terninger[2] || terninger[0] == terninger[3] || terninger[0] == terninger[4]) { toParEn = terninger[0] * 2, sjekkToParEn += 1 } //Første del fungerer som ettpar, men hvis den finner et par ganger den terningen med to og deretter setter verdien til det valgte parret til 1 (tidligere gitt verdien 0)
+                if (terninger[1] == terninger[2] || terninger[1] == terninger[3] || terninger[1] == terninger[4]) { toParTo = terninger[1] * 2, sjekkToParTo += 1 }
+                if (terninger[2] == terninger[3] || terninger[2] == terninger[4]) { toParTre = terninger[2] * 2, sjekkToParTre += 1 }
+                if (terninger[3] == terninger[4]) { toParFire = terninger[3] * 2, sjekkToParFire += 1 }
+
+                if (sjekkToParEn == 1 && sjekkToParTo == 1) { sum = toParEn + toParTo } // her sjekkes det hvilken kombinasjon av par som har fått verdien 1. Disse blir summert og satt som sum. 
+                if (sjekkToParEn == 1 && sjekkToParTre == 1) { sum = toParEn + toParTre }
+                if (sjekkToParEn == 1 && sjekkToParFire == 1) { sum = toParEn + toParFire }
+                if (sjekkToParTo == 1 && sjekkToParTre == 1) { sum = toParTo + toParTre }
+                if (sjekkToParTo == 1 && sjekkToParFire == 1) { sum = toParTo + toParFire }
+                if (sjekkToParTre == 1 && sjekkToParFire == 1) { sum = toParTre + toParFire }
+
+            }
+
+
+            if (kategori == "treLike") { //sjekker om terning 0 er lik terning 1 og terning 0 er lik terning to. Deretter sjekker den om terning 0 er lik terning 1 og terning tre. Dette blir gjenntatt med alle kommbinasjoner. Hvis kombinasjonen blir oppfylt ganges terningen med tre og setter dette som summen som blir skrevet ut.
+                if (terninger[0] == terninger[1] && terninger[0] == terninger[2] ||
+                    terninger[0] == terninger[1] && terninger[0] == terninger[3] ||
+                    terninger[0] == terninger[1] && terninger[0] == terninger[4] ||
+                    terninger[0] == terninger[2] && terninger[0] == terninger[3] ||
+                    terninger[0] == terninger[2] && terninger[0] == terninger[4] ||
+                    terninger[0] == terninger[3] && terninger[0] == terninger[4]) { sum = terninger[0] * 3 }
+
+                if (terninger[1] == terninger[2] && terninger[1] == terninger[3] ||
+                    terninger[1] == terninger[2] && terninger[1] == terninger[4] ||
+                    terninger[1] == terninger[3] && terninger[1] == terninger[4]) { sum = terninger[1] * 3 }
+
+                if (terninger[2] == terninger[3] && terninger[2] == terninger[4]) { sum = terninger[2] * 3 }
+            }
+
+            if (kategori == "fireLike") { //fungerer som tre like men sjekker om terning 0 er lik terning 1 og terning 0 er lik terning 2 og terning 0 er lik terning 3. Dette blir gjort med alle kombinasjoner 
+                if (terninger[0] == terninger[1] && terninger[0] == terninger[2] && terninger[0] == terninger[3] ||
+                    terninger[0] == terninger[1] && terninger[0] == terninger[2] && terninger[0] == terninger[4] ||
+                    terninger[0] == terninger[1] && terninger[0] == terninger[3] && terninger[0] == terninger[4] ||
+                    terninger[0] == terninger[2] && terninger[0] == terninger[3] && terninger[0] == terninger[4]) { sum = terninger[0] * 4 }
+
+                if (terninger[1] == terninger[2] && terninger[1] == terninger[3] && terninger[1] == terninger[4]) { sum = terninger[1] * 4 }
+
+                //den terningen som er lik tre av de andre terningene blir ganget med fire
+            }
+
+            if (kategori == "litenStraight") {
+                if ((terninger[0] == 1 || terninger[1] == 1 || terninger[2] == 1 || terninger[3] == 1 || terninger[4] == 1) && //sjekker om en av terningene er lik 1 OG om en av terningene er lik 2 OG om en av terningene er lik 3 OG om en av terningene er lik 4 OG om en av terningene er lik 5. 
+                    (terninger[0] == 2 || terninger[1] == 2 || terninger[2] == 2 || terninger[3] == 2 || terninger[4] == 2) &&
+                    (terninger[0] == 3 || terninger[1] == 3 || terninger[2] == 3 || terninger[3] == 3 || terninger[4] == 3) &&
+                    (terninger[0] == 4 || terninger[1] == 4 || terninger[2] == 4 || terninger[3] == 4 || terninger[4] == 4) &&
+                    (terninger[0] == 5 || terninger[1] == 5 || terninger[2] == 5 || terninger[3] == 5 || terninger[4] == 5)) { sum = 15 } //Hvis dette blir oppfylt  blir summen 15
+            }
+
+            if (kategori == "storStraight") {
+                if ((terninger[0] == 2 || terninger[1] == 2 || terninger[2] == 2 || terninger[3] == 2 || terninger[4] == 2) &&  //Sjekker om en av terningene er lik 2 OG om en av terningene er lik 3 OG om en av terningene er lik 4 OG om en av terningene er lik 5 OG om en av terningene er lik 6. 
+                    (terninger[0] == 3 || terninger[1] == 3 || terninger[2] == 3 || terninger[3] == 3 || terninger[4] == 3) &&
+                    (terninger[0] == 4 || terninger[1] == 4 || terninger[2] == 4 || terninger[3] == 4 || terninger[4] == 4) &&
+                    (terninger[0] == 5 || terninger[1] == 5 || terninger[2] == 5 || terninger[3] == 5 || terninger[4] == 5) &&
+                    (terninger[0] == 6 || terninger[1] == 6 || terninger[2] == 6 || terninger[3] == 6 || terninger[4] == 6)) { sum = 20 } //Hvis dette blir oppfylt  blir summen 20
+
+
+            }
+
+            if (kategori == "hus") {
+                terninger.sort(); //Sorterer terningene fra minst til størst
+                console.log(terninger)
+                //sjekker om terning kombinasjonene er like, hvis de er dette blir riktig kombinasjon ganget med to og den andre blir ganget med tre, disse plusset sammen blir satt til sum. Blir gjenntatt med annen kombinasjon i else if løkke.
+                if ((terninger[0] == terninger[1]) && (terninger[2] == terninger[4])) {
+                    sum = (terninger[0] * 2) + (terninger[2] * 3);
+
+                }
+
+                else if ((terninger[0] == terninger[2]) && (terninger[3] == terninger[4])) {
+                    sum = (terninger[3] * 2) + (terninger[0] * 3);
+                }
+            }
+
+
+
+            if (kategori == "sjanse") { //plusser sammen alle terningene og setter disse som sum
+                sum = terninger[0] + terninger[1] + terninger[2] + terninger[3] + terninger[4]
+            }
+
+            if (kategori == "yatzy") { // sjekker om terning 0 er lik terning 1 OG om terning 0 er lik terning 2 OG om terning 0 er lik terning 3 OG om terning 0 er lik terning 4. Hvis den er det blir summen satt til 50
+                if (terninger[0] == terninger[1] && terninger[0] == terninger[2] && terninger[0] == terninger[3] && terninger[0] == terninger[4]) { sum = 50 }
+            }
+
+            if (kategori == "totalsum") {
+                var enere = Number(document.getElementsByClassName("enere Spiller" + Spiller)[0].innerHTML) //henter enere til spilleren som har valgt summen
+                var toere = Number(document.getElementsByClassName("toere Spiller" + Spiller)[0].innerHTML) //henter toere til spilleren som har valgt summen
+                var treere = Number(document.getElementsByClassName("treere Spiller" + Spiller)[0].innerHTML) //henter treere til spilleren som har valgt summen
+                var firere = Number(document.getElementsByClassName("firere Spiller" + Spiller)[0].innerHTML) //henter firere til spilleren som har valgt summen
+                var femmere = Number(document.getElementsByClassName("femmere Spiller" + Spiller)[0].innerHTML) //henter femmere til spilleren som har valgt summen
+                var seksere = Number(document.getElementsByClassName("seksere Spiller" + Spiller)[0].innerHTML) //henter seksere til spilleren som har valgt summen
+                var bonus = Number(document.getElementsByClassName("bonus Spiller" + Spiller)[0].innerHTML) //henter eventuell bonus til spilleren som har valgt summen
+                var ettPar = Number(document.getElementsByClassName("ettPar Spiller" + Spiller)[0].innerHTML)//henter ettpar til spilleren som har valgt summen
+                var toPar = Number(document.getElementsByClassName("toPar Spiller" + Spiller)[0].innerHTML) //henter topar til spilleren som har valgt summen
+                var treLike = Number(document.getElementsByClassName("treLike Spiller" + Spiller)[0].innerHTML) //henter trelike til spilleren som har valgt summen
+                var fireLike = Number(document.getElementsByClassName("fireLike Spiller" + Spiller)[0].innerHTML) //henter firelike til spilleren som har valgt summen
+                var litenStraight = Number(document.getElementsByClassName("litenStraight Spiller" + Spiller)[0].innerHTML) //henter liten straight til spilleren som har valgt summen
+                var storStraight = Number(document.getElementsByClassName("storStraight Spiller" + Spiller)[0].innerHTML) //henter stor straight til spilleren som har valgt summen
+                var hus = Number(document.getElementsByClassName("hus Spiller" + Spiller)[0].innerHTML) //henter hus til spilleren som har valgt summen
+                var sjanse = Number(document.getElementsByClassName("sjanse Spiller" + Spiller)[0].innerHTML) //henter sjanse til spilleren som har valgt summen
+                var yatzy = Number(document.getElementsByClassName("yatzy Spiller" + Spiller)[0].innerHTML) //henter yatzy til spilleren som har valgt summen
+
+                sum = enere + toere + treere + firere + femmere + seksere + bonus + ettPar + toPar + treLike + fireLike + litenStraight + storStraight + hus + sjanse + yatzy //plusser alle kategoriene sammen og setter dette som sum
+            }
+
+            //siste linje     
+            document.getElementsByClassName(kategori + " Spiller" + Spiller)[0].innerHTML = sum //finner klassen som er trykket på i tabellen og legger inn summen som er funnet i en av if løkkene 
+
+            // var
+            // let 
+        }
+
+
+    </script>
+
+</body>
+
+</html>
