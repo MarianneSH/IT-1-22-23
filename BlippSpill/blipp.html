@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blippspill</title>
+</head>
+
+<body>
+    <audio id="lydForsvinn" src="BloppLyd.m4a"></audio>
+    <style>
+        div {
+            position: absolute;
+            background-color: lightblue;
+            width: 50px;
+            height: 50px;
+        }
+
+        #genererBox {
+            position: fixed;
+            left: 45%;
+            top: 40px;
+        }
+
+        #bloppTekst {
+            position: fixed;
+            left: 32%;
+            top: -10px;
+        }
+    </style>
+
+    <h2 style="position: fixed; top: -10px;" id="velgFargeSkrift">Sjekk av for å velge farge selv</h2>
+    <input style="position: fixed; top: 40px;" type="color" id="farge">
+    <input style="position: fixed; top: 45px; left: 60px;" type="checkbox" id="fargeBox">
+    <h2 id="bloppTekst"> Sjekk av for å starte</h2>
+    <input type="checkbox" id="genererBox">
+    <h2 style="position: fixed;
+    top: 55px;">Dine poeng</h2>
+    <h2 style="position: fixed; top: 80px;" id="poengElement">0</h2>
+
+
+
+    <script>
+        var ny = false
+        var farge = document.getElementById("farge") //kobler input farge feltet til javascript
+        var lydForsvinn = document.getElementById("lydForsvinn");
+        var poeng = 0
+        var fargeBox = document.getElementById("fargeBox");
+        var tilfeldigBox = document.getElementById("tilfeldigBox");
+        var kjor
+        var sjekkAvOverskrift = document.querySelector("#bloppTekst");
+        var genererBox = document.getElementById("genererBox");
+        var fjern
+        var sjekkAvFarge = document.querySelector("#velgFargeSkrift");
+
+
+        //*****************************************************************************************************//
+        // Funksjonen er en eventlistner som kjører når genererBox blir klikket på                             //
+        // Denne funskjonen har ett parameter                                                                  //
+        // Funksjonen sjekker om genererBox er checked eller ikke. Hvis den er checked blir funksjonen         //
+        // alltid() kalt på og sjekkAvOverskrift får en ny tekst. Hivs den ikke er checked blir eventlisteren  //
+        // window.onclick kjørt. Window onclick lager en ny blopp hver gang det blir trykket på skjermen       //
+        //*****************************************************************************************************//
+
+        genererBox.onclick = function (evt) {
+            evt.stopPropagation()
+
+            if (genererBox.checked == true) {
+                alltid();
+                sjekkAvOverskrift.innerHTML = "Fjern merket for å trykke hvor du vil ha blopper";
+            }
+
+            if (genererBox.checked == false) {
+                clearTimeout(kjor)
+                sjekkAvOverskrift.innerHTML = "Sjekk av for å generere tilfeldige blopper";
+
+                window.onclick = function (evt) { //kan klikke hvor som helst i vinduet, evt er informasjon om hendelsen, hendelsen er et klikk
+                    ny = true
+                    evt.stopPropagation();
+                    var tilfeldigFarge = Math.floor(Math.random() * 16777215).toString(16);
+                    var tilfeldigRadius = Math.floor(Math.random() * 70);
+                    mittElement = document.createElement("div")
+                    mittElement.style.top = evt.clientY - 25 + "px"; //y- kordinatet til musen fra toppen, musen sin posisjon på y- aksen er clientY
+                    mittElement.style.left = evt.clientX - 25 + "px"; //x- kordinatet til musen fra venstre, musen sin posisjon på x- aksen er clientX
+                    mittElement.style.borderRadius = tilfeldigRadius + "%";
+                    mittElement.onmouseover = fjern;
+                    document.body.appendChild(mittElement)
+
+                    if (fargeBox.checked == true) {
+                        mittElement.style.backgroundColor = "#" + tilfeldigFarge;
+                        sjekkAvFarge.innerHTML = "Fjern merket for tilfeldige farger";
+                    }
+                    else {
+                        mittElement.style.backgroundColor = "#" + tilfeldigFarge;
+                        sjekkAvFarge.innerHTML = "Sjekk av for å velge farge selv";
+                    }
+
+
+                }
+            }
+        }
+
+        //**************************************************************************************************************//
+        // Funksjonen er koblet til variabelen fjern                                                                    //
+        // Denne funskjonen har ett parameter                                                                           //
+        // Funksjonen sjekker om bloppen som blir holt over er ny, hvis den ikke er det blir det lagt til ett poeng,    //
+        // spilt av en lyd, spilt av en animasjon og elementet blir fjernet.                                            //
+        //**************************************************************************************************************//
+
+
+        fjern = function (evt) {
+            evt.stopPropagation();
+            if (!ny) {
+                poeng++
+                poengElement.innerHTML = poeng
+                lydForsvinn.play();
+                var minAnimasjon = evt.target.animate([{ transform: "scale(1)" }, { transform: "scale(2)" }], 500)
+                minAnimasjon.onfinish = function () {
+                    document.body.removeChild(evt.target);
+                }
+
+            }
+            ny = false;
+        }
+
+        //*******************************************************************************************************//
+        // Funksjonen alltid()                                                                                   //                                          
+        // Funksjonen gjør at det alltid blir lagt til nye blopper. Bloppene får et tilfelfig kordinat, men er   //
+        // av grenset for å ikke genere over tekst eller sjekkbokser. Her blir også div elementene (bloppene)    //
+        // laget. De får en tilfeldig farge (hvis dette er valgt) og en tilfeldig radius.                        //
+        // div elementene blir fjernet på onmouse over.                                                          //
+        // Teksten ved farge valget blir endret avhengig av om checkboksen er huket av eller ikke. Om farge blir //
+        // valgt manuelt eller tilfeldig er også avhengig av checkboksen.                                        //
+        //*******************************************************************************************************//
+
+        function alltid() {
+            kjor = setTimeout(() => { alltid(); }, 700)
+            let kordinater = [Math.random() * (screen.width - 50), Math.random() * (screen.height - 160)]
+
+            while (1000 < kordinater[0] < 200 && kordinater[1] < 150) {
+                kordinater[0] = [Math.random() * (screen.width - 50)]
+                kordinater[1] = [Math.random() * (screen.height - 160)]
+            }
+
+            var tilfeldigFarge = Math.floor(Math.random() * 16777215).toString(16);
+            var tilfeldigRadius = Math.floor(Math.random() * 70);
+            mittElement = document.createElement("div")
+            mittElement.style.left = kordinater[0] + "px";
+            mittElement.style.top = kordinater[1] + "px";
+            mittElement.style.borderRadius = tilfeldigRadius + "%";
+            mittElement.onmouseover = fjern;
+            document.body.appendChild(mittElement)
+
+            if (fargeBox.checked == true) {
+                mittElement.style.backgroundColor = farge.value;
+                sjekkAvFarge.innerHTML = "Fjern merket for tilfeldige farger";
+            }
+            else {
+                mittElement.style.backgroundColor = "#" + tilfeldigFarge;
+                sjekkAvFarge.innerHTML = "Sjekk av for å velge farge selv";
+            }
+
+        }
+
+        //**************************************************************************************************************//
+        // Funksjonene under er eventlistners som kjører når blobbene blir laget manuelt.                               //                                                        //
+        // Disse funskjonen har ett parameter                                                                           //
+        // Funksjonene gjør at hvis man trykker på fargeinput elementet eller farge checkboksen blir det ikke generet   //
+        // Ett nytt element som dekker over feltene                                                                     //
+        //**************************************************************************************************************//
+
+        farge.onclick = function (stopp) {
+            stopp.stopPropagation()
+        }
+
+        fargeBox.onclick = function (stopp) {
+            stopp.stopPropagation()
+        }
+
+    </script>
+</body>
+
+</html>
