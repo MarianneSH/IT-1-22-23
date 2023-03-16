@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LagDittVisittkort</title>
+    </head>
+
+    <body>
+        <style>
+            input, select, color, date, file {
+                display: block;
+                margin-top: 2px;
+                margin-bottom: 7px;
+            }
+
+            label {
+                font-weight: bold;
+            }
+
+
+            #grense {
+                position: relative;
+                border-collapse: collapse;
+                border-width: 4px;
+                border-style: solid;
+                border-color: #000000;
+                height: 309px;
+                width: 500px;
+                left: 450px;
+                top: -520px;
+
+            }
+
+            #bakgrunn {
+                position: absolute;
+                height: 309px;
+                width: 500px;
+            }
+
+            #navn {
+                margin-top: 20px;
+                margin-left: 20px;
+                font-size: 150%;
+                font-weight: bold;
+            }
+
+            #kjonn {
+                margin-top: 25px;
+                margin-left: 20px;
+                font-size: 120%;
+                font-weight: bold;
+            }
+
+            #bursdag {
+                margin-top: 25px;
+                margin-left: 20px;
+                font-size: 120%;
+                font-weight: bold;
+            }
+
+            #yrke {
+                margin-top: 25px;
+                margin-left: 20px;
+                font-size: 120%;
+                font-weight: bold;
+            }
+
+            #telefon {
+                margin-top: 25px;
+                margin-left: 20px;
+                font-size: 120%;
+                font-weight: bold;
+            }
+
+            #forerkort {
+                margin-top: 25px;
+                margin-left: 20px;
+                font-size: 120%;
+                font-weight: bold;
+            }
+
+            #tekstFarge {
+                color: "";
+            }
+
+            #bildeFil {
+                z-index: 1;
+                position: absolute;
+                margin-top: -485px;
+                margin-left: 700px;
+                border: 5px;
+                border-style: solid;
+                border-color: #ffffff;
+                max-height: 250px;
+                width: 220px
+            }
+        </style>
+
+        <label>Skriv inn navn:
+            <input type="input" id="inpNavn" placeholder="Navn">
+        </label>
+
+
+        <label>Velg kjønn:
+            <select id="inpKjonn">
+                <option value="Mann">Mann</option>
+                <option value="Dame">Dame</option>
+                <option value="Annet">Annet</option>
+            </select>
+        </label>
+
+        <label>Skriv inn bursdag:
+            <input type="date" id="inpBursdag">
+        </label>
+
+        <label>Skriv inn yrke:
+            <input type="input" id="inpYrke" placeholder="Yrke">
+        </label>
+
+        <label>Skriv inn telefonnummer:
+            <input type="text" id="inpTelefon" placeholder="Telefonnummer" min="1" maxlength="8">
+        </label>
+
+        <label> Har du førerkort?
+            <br>
+            <label> Ja
+                <input type="radio" name="forerkort" value="Ja" id="inpForerkortJa">
+            </label>
+            <label> Nei
+                <input type="radio" name="forerkort" value="Nei" id="inpForerkortNei">
+            </label>
+        </label>
+
+        <label>Legg inn ett bilde:
+            <input type="file" accept="image/*" name="bilde" id="inpBilde" onchange="lastOppFil(event)">
+        </label>
+
+        <label>Velg en bakgrunnsfarge:
+            <input type="color" id="inpBakgrunnsFarge">
+        </label>
+
+        <label>Velg en tekst farge:
+            <input type="color" id="inpTekstFarge">
+        </label>
+
+        <label> Velg en kort grense farge:
+            <input type="color" id="inpKortGrenseFarge">
+        </label>
+
+        <label> Velg en bilderamme farge:
+            <input type="color" id="inpBilderammeFarge">
+        </label>
+
+        <label>Velg en ramme til visittkortet:
+            <select id="inpRamme">
+                <option value="enkel">Enkel</option>
+                <option value="dobbel">Dobbel</option>
+                <option value="prikker">Prikker</option>
+            </select>
+        </label>
+        <br>
+        <button id="btnPlasser">Trykk for å plassere</button>
+
+
+        <br>
+        <br>
+
+        <div>
+            <img id="bildeFil" src="hundPortrett.avif" />
+        </div>
+
+        <div id="grense">
+            <div id="bakgrunn">
+                <div id="tekstFarge">
+                    <div id="navn">
+                        <p>Navn</p>
+                    </div>
+                    <div id="kjonn">
+                        <p>Kjønn</p>
+                    </div>
+                    <div id="bursdag">
+                        <p>Fødselsdag</p>
+                    </div>
+                    <div id="yrke">
+                        <p>Yrke</p>
+                    </div>
+                    <div id="telefon">
+                        <p>Telefonnummer</p>
+                    </div>
+                    <div id="forerkort">
+                        <p>Førerkort</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+    </body>
+
+    <script>
+
+        //Definerer variablene i javascript  
+        let inpNavn = document.getElementById("inpNavn")
+        let inpKjonn = document.getElementById("inpKjonn")
+        let inpBursdag = document.getElementById("inpBursdag")
+        let inpYrke = document.getElementById("inpYrke")
+        let inpTelefon = document.getElementById("inpTelefon")
+        let forerkortJa = document.getElementById("inpForerkortJa");
+        let forerkortNei = document.getElementById("inpForerkortNei");
+        let inpBilde = document.getElementById("inpBilde")
+        let inpBakgrunnsFarge = document.getElementById("inpBakgrunnsFarge")
+        let inpTekstFarge = document.getElementById("inpTekstFarge")
+        let inpBilderammeFarge = document.getElementById("inpBilderammeFarge")
+        let inpBilderamme = document.getElementById("inpRamme")
+        let plasser = document.getElementById("btnPlasser")
+
+        let kortNavn = document.getElementById("navn")
+        let kortKjonn = document.getElementById("kjonn")
+        let kortBursdag = document.getElementById("bursdag")
+        let kortYrke = document.getElementById("yrke")
+        let kortTelefon = document.getElementById("telefon")
+        let kortForerkort = document.getElementById("forerkort")
+        let kortBakgrunnsfarge = document.getElementById("bakgrunn")
+        let kortTekstFarge = document.getElementById("tekstFarge")
+        let kortGrense = document.getElementById("grense")
+        let bilde = document.getElementById("bildeFil")
+
+        //gir knappen plasser en eventlistener som gjør at funksjonen plasserInfo blir kalt på når knappen blir trykket på
+        plasser.addEventListener("click", plasserInfo)
+
+
+        // Definerer funksjonen "plasserInfo" som setter inn informasjon fra skjemaet på visittkortet.
+        // Funksjonen tilpasser også utseendet til visittkortet.
+        function plasserInfo() {
+            kortNavn.innerHTML = inpNavn.value;
+            kortKjonn.innerHTML = inpKjonn.value;
+            kortBursdag.innerHTML = inpBursdag.value;
+            kortYrke.innerHTML = inpYrke.value;
+            kortTelefon.innerHTML = inpTelefon.value;
+            kortBakgrunnsfarge.style.backgroundColor = inpBakgrunnsFarge.value;
+            kortTekstFarge.style.color = inpTekstFarge.value;
+            kortGrense.style.borderColor = inpKortGrenseFarge.value;
+            bilde.style.borderColor = inpBilderammeFarge.value;
+
+
+            if (forerkortJa.checked == true) {
+                kortForerkort.innerHTML = "Har førerkort"
+            }
+
+            else {
+                kortForerkort.innerHTML = "Har ikke førerkort"
+            }
+
+            if (inpBilderamme.value == "enkel") {
+                kortGrense.style.borderStyle = "solid"
+
+            }
+
+            else if (inpBilderamme.value == "dobbel") {
+                kortGrense.style.borderStyle = "double"
+            }
+
+            else {
+                kortGrense.style.borderStyle = "dotted"
+            }
+
+        }
+
+        // Definerer funksjonen "lastOppFil" som tar imot et "event" som parameter.
+        // Funksjonen får tak i en fil og viser den på visittkortet.
+        function lastOppFil(event) {
+            let bilde = document.getElementById('bildeFil');
+            bilde.src = URL.createObjectURL(event.target.files[0]);
+        };
+
+
+
+    </script>
+
+    </html>
+</body>
+
+</html>
