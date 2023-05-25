@@ -4,8 +4,11 @@
     display: grid;
     grid-gap: 5px;
     justify-content: space-between;
-    text-align: center;
+    text-align: left;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   
+    
+
 }
 
 #border {
@@ -14,7 +17,6 @@
     padding: 10px;
     margin-left: 20%;
     margin-right: 20%;
-    padding: 20px;
 
 
 }
@@ -23,10 +25,17 @@ a{
     text-decoration: none;
     padding: 10px;
     color: #765341;
+    
     font-size: x-large;
     margin: 10px;
     flex-grow: 1;
 
+}
+
+i{
+    color: #765341;
+    font-size: large;
+    margin-left: 80px;
 }
 
 #main {
@@ -38,7 +47,7 @@ a{
 }
 
 .meny {display: grid;
-    flex-wrap: wrap;
+    flex-wrap: wrap;   
 
 }
 
